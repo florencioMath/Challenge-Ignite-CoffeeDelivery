@@ -35,4 +35,8 @@ h1 {
   }
 }
 
+button {
+  all: unset;
+}
+
 `;

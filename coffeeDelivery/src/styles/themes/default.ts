@@ -2,6 +2,7 @@ export const defaultTheme = {
   // Base
   white: '#FFFFFF',
   background: '#FAFAFA',
+  black: '#000000',
 
   'base-title': '#272221',
   'base-subtitle': '#403937',
