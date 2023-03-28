@@ -11,7 +11,7 @@ body {
   background: ${(props) => props.theme['background']};
   color: ${(props) => props.theme['base-text']};
   -webkit-font-smoothing: antialiased;
-  padding: 2rem;
+  padding: 2rem 10rem;
 }
 
 body, input, textarea, button {
@@ -28,7 +28,10 @@ h1 {
 
 @media (max-width: 768px) {
   html {
-    font-size: 87.5%
+    font-size: 87.5%;
+  }
+  body {
+    padding: 2rem 5rem;
   }
 }
 
