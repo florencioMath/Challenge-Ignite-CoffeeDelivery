@@ -41,7 +41,7 @@ export const Icon = styled.div`
   color: ${(props) => props.theme['purple']};
 `;
 
-export const SwitchRootContainer = styled.button`
+export const SwitchRootContainer = styled.div`
   button {
     width: 42px;
     height: 25px;
