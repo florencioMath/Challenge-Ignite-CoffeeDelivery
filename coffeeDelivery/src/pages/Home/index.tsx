@@ -1,7 +1,9 @@
+import { HomeContainer } from './styels';
+
 export function Home() {
   return (
     <>
-      <h1>This is the Home</h1>
+      <HomeContainer>This is the Home</HomeContainer>
     </>
   );
 }
