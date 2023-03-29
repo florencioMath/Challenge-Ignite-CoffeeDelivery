@@ -1,7 +1,8 @@
-export const defaultTheme = {
+export const lightTheme = {
   // Base
   white: '#FFFFFF',
   background: '#FAFAFA',
+  black: '#000000',
 
   'base-title': '#272221',
   'base-subtitle': '#403937',

@@ -23,6 +23,7 @@ export const NavBar = styled.div`
 `;
 
 export const LogoAndThemeModeContainer = styled.div`
+  gap: 2rem !important;
   a {
     display: flex;
     align-items: center;
@@ -39,4 +40,36 @@ export const LocaleWrapper = styled.div`
 
 export const Icon = styled.div`
   color: ${(props) => props.theme['purple']};
+`;
+
+export const SwitchRootContainer = styled.div`
+  button {
+    width: 32px;
+    height: 15px;
+    background-color: ${(props) => props.theme['black']};
+    border-radius: 9999px;
+    position: relative;
+    border: 2px solid ${(props) => props.theme['purple-light']};
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+`;
+
+export const SwitchThumbContainer = styled.span`
+  span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 11px;
+    height: 11px;
+    background-color: ${(props) => props.theme['white']};
+    border-radius: 9999px;
+    transition: transform 100ms;
+    transform: translateX(2px);
+    will-change: transform;
+    cursor: pointer;
+
+    &[data-state='checked'] {
+      transform: translateX(19px);
+    }
+  }
 `;
