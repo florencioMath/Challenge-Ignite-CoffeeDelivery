@@ -23,6 +23,7 @@ export const NavBar = styled.div`
 `;
 
 export const LogoAndThemeModeContainer = styled.div`
+  gap: 2rem !important;
   a {
     display: flex;
     align-items: center;
@@ -43,8 +44,8 @@ export const Icon = styled.div`
 
 export const SwitchRootContainer = styled.div`
   button {
-    width: 42px;
-    height: 25px;
+    width: 32px;
+    height: 15px;
     background-color: ${(props) => props.theme['black']};
     border-radius: 9999px;
     position: relative;
@@ -58,8 +59,8 @@ export const SwitchThumbContainer = styled.span`
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 21px;
-    height: 21px;
+    width: 11px;
+    height: 11px;
     background-color: ${(props) => props.theme['white']};
     border-radius: 9999px;
     transition: transform 100ms;
