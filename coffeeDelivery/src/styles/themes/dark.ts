@@ -1,7 +1,7 @@
-export const defaultTheme = {
+export const darkTheme = {
   // Base
-  white: '#FFFFFF',
-  background: '#FAFAFA',
+  white: 'red',
+  background: '#000000',
   black: '#000000',
 
   'base-title': '#272221',

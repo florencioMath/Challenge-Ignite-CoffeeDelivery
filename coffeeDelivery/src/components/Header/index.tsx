@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import * as Switch from '@radix-ui/react-switch';
 import { MapPin, Moon, Sun } from '@phosphor-icons/react';
@@ -13,9 +13,15 @@ import {
   SwitchRootContainer,
   SwitchThumbContainer,
 } from './styles';
+import { ThemeContext } from '../../App';
 
 export function Header() {
   const [darkMode, setDarkMode] = useState<boolean>(true);
+  const { toggleTheme, currentTheme } = useContext(ThemeContext);
+
+  function handleToggleTheme() {
+    toggleTheme();
+  }
 
   return (
     <NavBar>
@@ -24,10 +30,14 @@ export function Header() {
           <img src={logo} alt="" />
         </Link>
         <SwitchRootContainer>
-          <Switch.Root onCheckedChange={() => setDarkMode(!darkMode)}>
+          <Switch.Root onCheckedChange={handleToggleTheme}>
             <SwitchThumbContainer>
               <Switch.Thumb>
-                {darkMode === true ? <Moon size={18} /> : <Sun size={18} />}
+                {currentTheme === 'dark' ? (
+                  <Moon size={18} />
+                ) : (
+                  <Sun size={18} />
+                )}
               </Switch.Thumb>
             </SwitchThumbContainer>
           </Switch.Root>
