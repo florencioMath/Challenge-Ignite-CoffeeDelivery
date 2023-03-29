@@ -1,7 +1,7 @@
 export const darkTheme = {
   // Base
-  white: 'red',
-  background: '#000000',
+  white: '#FFFFFF',
+  background: '#121214',
   black: '#000000',
 
   'base-title': '#272221',
