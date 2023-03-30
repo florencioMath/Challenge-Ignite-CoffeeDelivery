@@ -7,7 +7,7 @@ export const NavBar = styled.div`
   height: 104px;
   width: calc(100vw - 20rem);
   position: fixed;
-  background: ${(props) => props.theme.colors['background']};
+  background: ${(props) => props.theme['background']};
 
   div {
     display: flex;
@@ -32,46 +32,12 @@ export const LogoAndThemeModeContainer = styled.div`
 `;
 
 export const LocaleWrapper = styled.div`
-  color: ${(props) => props.theme.colors['purple-dark']};
-  background: ${(props) => props.theme.colors['purple-light']};
+  color: ${(props) => props.theme['purple-dark']};
+  background: ${(props) => props.theme['purple-light']};
   padding: 8px;
   border-radius: 6px;
 `;
 
 export const Icon = styled.div`
-  color: ${(props) => props.theme.colors['purple']};
-`;
-
-export const SwitchRootContainer = styled.div`
-  button {
-    width: 42px;
-    height: 22px;
-    background: ${(props) => props.theme.colors['purple-light']};
-    border-radius: 9999px;
-    position: relative;
-    border: 2px solid ${(props) => props.theme.colors['purple']};
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  }
-`;
-
-export const SwitchThumbContainer = styled.span`
-  span {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 21px;
-    height: 21px;
-    background: ${(props) => props.theme.colors['black']};
-    color: ${(props) => props.theme.colors['purple']};
-
-    border-radius: 9999px;
-    transition: transform 100ms;
-    transform: translateX(2px);
-    will-change: transform;
-    cursor: pointer;
-
-    &[data-state='checked'] {
-      transform: translateX(19px);
-    }
-  }
+  color: ${(props) => props.theme['purple']};
 `;
