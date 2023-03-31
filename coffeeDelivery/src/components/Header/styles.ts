@@ -5,9 +5,10 @@ export const NavBar = styled.div`
   align-items: center;
   justify-content: space-between;
   height: 104px;
-  width: calc(100vw - 20rem);
+  max-width: calc(100vw - 20rem);
   position: fixed;
   background: ${(props) => props.theme['background']};
+  width: 1440px;
 
   div {
     display: flex;
@@ -15,10 +16,6 @@ export const NavBar = styled.div`
     justify-content: center;
     gap: 0.75rem;
     height: 38px;
-  }
-
-  @media (max-width: 768px) {
-    width: calc(100vw - 10rem);
   }
 `;
 

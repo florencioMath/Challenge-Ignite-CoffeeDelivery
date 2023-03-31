@@ -5,6 +5,8 @@ export const HomeContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
+  padding: 5.75rem 0;
 
   h1 {
     color: ${(props) => props.theme['base-title']};
