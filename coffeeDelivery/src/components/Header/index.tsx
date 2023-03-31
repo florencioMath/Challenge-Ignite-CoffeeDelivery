@@ -22,7 +22,7 @@ export function Header() {
       <div>
         <LocaleWrapper>
           <Icon>
-            <MapPin size={22} weight="fill" />
+            <MapPin size={21} weight="fill" />
           </Icon>
           <p>Balneário Camboriú, SC</p>
         </LocaleWrapper>

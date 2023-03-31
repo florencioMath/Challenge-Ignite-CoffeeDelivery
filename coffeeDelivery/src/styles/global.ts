@@ -18,12 +18,12 @@ body, input, textarea, button {
   font-family: 'Roboto' sans-serif;
   font-weight: 400;
   font-size: 1rem;
+  line-height: 130%;
 }
 
 h1 {
-  font-family: 'Baloo', sans-serif;
-  font-weight: 400;
-  font-size: 1.125rem;
+  font-family: 'Baloo 2', sans-serif;
+  line-height: 130%;
 }
 
 @media (max-width: 768px) {

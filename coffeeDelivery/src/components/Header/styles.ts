@@ -36,6 +36,7 @@ export const LocaleWrapper = styled.div`
   background: ${(props) => props.theme['purple-light']};
   padding: 8px;
   border-radius: 6px;
+  gap: 0.3rem !important;
 `;
 
 export const Icon = styled.div`
