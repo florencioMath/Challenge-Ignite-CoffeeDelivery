@@ -1,51 +1,68 @@
 import styled, { css } from 'styled-components';
+import homeBackground from './assets/home-background.svg';
 
 export const HomeContainer = styled.div`
   margin-top: 104px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 3.5rem;
   padding: 5.75rem 0;
+  max-width: calc(100vw - 20rem);
+  width: 1120px;
 `;
 
-export const CallToActionContainer = styled.div`
+export const BackgroundBlurContainer = styled.div`
+  min-width: 100vw;
+  height: 544px;
+  margin-top: 104px;
+  position: absolute;
+  z-index: -10;
+  background-size: 100%;
+  background-image: url(${homeBackground});
+  filter: blur(130px);
+  -webkit-filter: blur(130px);
+`;
+
+export const CoffeeCupContainer = styled.img``;
+
+export const DescriptionContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+
   h1 {
     color: ${(props) => props.theme['base-title']};
     font-size: 3rem;
-    max-width: 600px;
+    width: 36.75rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
   }
 
   p {
     color: ${(props) => props.theme['base-subtitle']};
     font-size: 1.25rem;
-    margin-top: 1rem;
     max-width: 588px;
     line-height: 130%;
   }
 `;
 
-export const AboutContainer = styled.div`
+export const ItensContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
   align-items: center;
+  row-gap: 1.25rem;
+  column-gap: 2.5rem;
+  width: 36.6875rem;
   margin-top: 4.125rem;
 `;
 
-export const ContentContainer = styled.div`
-  div {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    margin-bottom: 1.25rem;
-
-    p {
-      color: ${(props) => props.theme['base-subtitle']};
-      font-size: 1rem;
-      display: flex;
-    }
-  }
+export const Item = styled.div`
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.3;
+  min-width: 14.4375rem;
+  display: flex;
+  align-items: center;
+  column-gap: 0.75rem;
+  color: ${(props) => props.theme['base-subtitle']};
 `;
 
 export const BaseIconItem = styled.span`
