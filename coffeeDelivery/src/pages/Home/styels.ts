@@ -7,7 +7,9 @@ export const HomeContainer = styled.div`
   justify-content: space-between;
   width: 100%;
   padding: 5.75rem 0;
+`;
 
+export const CallToActionContainer = styled.div`
   h1 {
     color: ${(props) => props.theme['base-title']};
     font-size: 3rem;
@@ -17,6 +19,9 @@ export const HomeContainer = styled.div`
   p {
     color: ${(props) => props.theme['base-subtitle']};
     font-size: 1.25rem;
+    margin-top: 1rem;
+    max-width: 588px;
+    line-height: 130%;
   }
 `;
 
@@ -26,10 +31,20 @@ export const AboutContainer = styled.div`
   gap: 20px;
   align-items: center;
   margin-top: 4.125rem;
+`;
 
-  p {
-    color: ${(props) => props.theme['base-subtitle']};
-    font-size: 1rem;
+export const ContentContainer = styled.div`
+  div {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 1.25rem;
+
+    p {
+      color: ${(props) => props.theme['base-subtitle']};
+      font-size: 1rem;
+      display: flex;
+    }
   }
 
   span {
@@ -41,14 +56,5 @@ export const AboutContainer = styled.div`
     min-width: 32px;
     border-radius: 9999px;
     color: ${(props) => props.theme['white']};
-  }
-`;
-
-export const ContentContainer = styled.div`
-  div {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 1.25rem;
   }
 `;
