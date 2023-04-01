@@ -12,6 +12,9 @@ body {
   color: ${(props) => props.theme['base-text']};
   -webkit-font-smoothing: antialiased;
   padding: 0 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 body, input, textarea, button {
