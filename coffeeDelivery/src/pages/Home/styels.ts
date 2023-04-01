@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const HomeContainer = styled.div`
   margin-top: 104px;
@@ -46,15 +46,42 @@ export const ContentContainer = styled.div`
       display: flex;
     }
   }
+`;
 
-  span {
-    background: lightgray;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 32px;
-    min-width: 32px;
-    border-radius: 9999px;
-    color: ${(props) => props.theme['white']};
-  }
+export const BaseIconItem = styled.span`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
+  min-width: 32px;
+  border-radius: 9999px;
+  color: ${(props) => props.theme['white']};
+  font-weight: 400;
+`;
+
+interface IconItemProps {
+  variant?: 'shoppingCart' | 'package' | 'timer' | 'coffee';
+}
+
+export const IconItem = styled(BaseIconItem)<IconItemProps>`
+  ${(props) =>
+    props.variant === 'shoppingCart' &&
+    css`
+      background: ${(props) => props.theme['yellow-dark']};
+    `}
+  ${(props) =>
+    props.variant === 'package' &&
+    css`
+      background: ${(props) => props.theme['yellow']};
+    `}
+  ${(props) =>
+    props.variant === 'timer' &&
+    css`
+      background: ${(props) => props.theme['base-text']};
+    `}
+  ${(props) =>
+    props.variant === 'coffee' &&
+    css`
+      background: ${(props) => props.theme['purple']};
+    `}
 `;

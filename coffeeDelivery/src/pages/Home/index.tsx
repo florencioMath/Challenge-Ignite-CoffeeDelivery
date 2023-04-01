@@ -3,6 +3,7 @@ import {
   CallToActionContainer,
   ContentContainer,
   HomeContainer,
+  IconItem,
 } from './styels';
 
 import heroLogo from './assets/hero-logo.png';
@@ -27,17 +28,17 @@ export function Home() {
             <ContentContainer>
               <div>
                 <div>
-                  <span>
+                  <IconItem variant="shoppingCart">
                     <ShoppingCart size={16} weight="fill" />
-                  </span>
+                  </IconItem>
                   <p>Compra simples e segura</p>
                 </div>
               </div>
               <div>
                 <div>
-                  <span>
+                  <IconItem variant="package">
                     <Package size={16} weight="fill" />
-                  </span>
+                  </IconItem>
                   <p>Embalagem mantém o café intacto</p>
                 </div>
               </div>
@@ -45,17 +46,17 @@ export function Home() {
             <ContentContainer>
               <div>
                 <div>
-                  <span>
+                  <IconItem variant="timer">
                     <Timer size={16} weight="fill" />
-                  </span>
+                  </IconItem>
                   <p>Entrega rápida e rastreada</p>
                 </div>
               </div>
               <div>
                 <div>
-                  <span>
+                  <IconItem variant="coffee">
                     <Coffee size={16} weight="fill" />
-                  </span>
+                  </IconItem>
                   <p>O café chega fresquinho até você</p>
                 </div>
               </div>
