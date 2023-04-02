@@ -6,6 +6,7 @@ export function Coffees() {
     <>
       <CoffeesContainer>
         <h1>Nossos cafés</h1>
+
         <CoffeesList />
       </CoffeesContainer>
     </>
