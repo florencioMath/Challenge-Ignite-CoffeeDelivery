@@ -6,10 +6,11 @@ import {
   Item,
   CoffeeCupContainer,
   BackgroundBlurContainer,
-} from './styels';
+} from './styles';
 
 import heroLogo from './assets/hero-logo.png';
 import { Coffee, Package, ShoppingCart, Timer } from '@phosphor-icons/react';
+import { Coffees } from './components/Coffees';
 
 export function Home() {
   return (
@@ -53,6 +54,7 @@ export function Home() {
 
         <CoffeeCupContainer src={heroLogo} alt="" />
       </HomeContainer>
+      <Coffees />
     </>
   );
 }

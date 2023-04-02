@@ -1,7 +1,13 @@
+import { CoffeesList } from './components/CoffeesList';
+import { CoffeesContainer } from './styles';
+
 export function Coffees() {
   return (
     <>
-      <h1>This is the Coffees</h1>
+      <CoffeesContainer>
+        <h1>Nossos cafés</h1>
+        <CoffeesList />
+      </CoffeesContainer>
     </>
   );
 }
