@@ -6,9 +6,9 @@ export const HomeContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 3.5rem;
-  padding: 5.75rem 0;
   max-width: calc(100vw - 20rem);
-  width: 1120px;
+  width: 1440px;
+  padding: 5.75rem 10rem;
 `;
 
 export const BackgroundBlurContainer = styled.div`
@@ -89,12 +89,12 @@ export const IconItem = styled(BaseIconItem)<IconItemProps>`
   ${(props) =>
     props.variant === 'package' &&
     css`
-      background: ${(props) => props.theme['yellow']};
+      background: ${(props) => props.theme['base-text']};
     `}
   ${(props) =>
     props.variant === 'timer' &&
     css`
-      background: ${(props) => props.theme['base-text']};
+      background: ${(props) => props.theme['yellow']};
     `}
   ${(props) =>
     props.variant === 'coffee' &&
