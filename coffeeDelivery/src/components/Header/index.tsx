@@ -6,20 +6,21 @@ import logo from '../../assets/logo.svg';
 import {
   Icon,
   LocaleWrapper,
-  LogoAndThemeModeContainer,
-  NavBar,
+  HeaderContainer,
+  Logo,
+  LocationAndCartContainer,
 } from './styles';
 
 export function Header() {
   return (
-    <NavBar>
-      <LogoAndThemeModeContainer>
+    <HeaderContainer>
+      <Logo>
         <Link to={'/'}>
           <img src={logo} alt="" />
         </Link>
-      </LogoAndThemeModeContainer>
+      </Logo>
 
-      <div>
+      <LocationAndCartContainer>
         <LocaleWrapper>
           <Icon>
             <MapPin size={21} weight="fill" />
@@ -27,7 +28,7 @@ export function Header() {
           <p>Balneário Camboriú, SC</p>
         </LocaleWrapper>
         <Cart />
-      </div>
-    </NavBar>
+      </LocationAndCartContainer>
+    </HeaderContainer>
   );
 }

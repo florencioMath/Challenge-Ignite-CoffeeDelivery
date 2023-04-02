@@ -1,73 +1,60 @@
 import {
-  AboutContainer,
-  CallToActionContainer,
-  ContentContainer,
+  DescriptionContainer,
+  ItensContainer,
   HomeContainer,
   IconItem,
-} from './styels';
+  Item,
+  CoffeeCupContainer,
+  BackgroundBlurContainer,
+} from './styles';
 
 import heroLogo from './assets/hero-logo.png';
 import { Coffee, Package, ShoppingCart, Timer } from '@phosphor-icons/react';
+import { Coffees } from './components/Coffees';
 
 export function Home() {
   return (
     <>
+      <BackgroundBlurContainer />
       <HomeContainer>
-        <div>
-          <CallToActionContainer>
-            <div>
-              <h1>Encontre o café perfeito para qualquer hora do dia</h1>
-              <p>
-                Com o Coffee Delivery você recebe seu café onde estiver, a
-                qualquer hora
-              </p>
-            </div>
-          </CallToActionContainer>
+        <DescriptionContainer>
+          <h1>Encontre o café perfeito para qualquer hora do dia</h1>
+          <p>
+            Com o Coffee Delivery você recebe seu café onde estiver, a qualquer
+            hora
+          </p>
 
-          <AboutContainer>
-            <ContentContainer>
-              <div>
-                <div>
-                  <IconItem variant="shoppingCart">
-                    <ShoppingCart size={16} weight="fill" />
-                  </IconItem>
-                  <p>Compra simples e segura</p>
-                </div>
-              </div>
-              <div>
-                <div>
-                  <IconItem variant="package">
-                    <Package size={16} weight="fill" />
-                  </IconItem>
-                  <p>Embalagem mantém o café intacto</p>
-                </div>
-              </div>
-            </ContentContainer>
-            <ContentContainer>
-              <div>
-                <div>
-                  <IconItem variant="timer">
-                    <Timer size={16} weight="fill" />
-                  </IconItem>
-                  <p>Entrega rápida e rastreada</p>
-                </div>
-              </div>
-              <div>
-                <div>
-                  <IconItem variant="coffee">
-                    <Coffee size={16} weight="fill" />
-                  </IconItem>
-                  <p>O café chega fresquinho até você</p>
-                </div>
-              </div>
-            </ContentContainer>
-          </AboutContainer>
-        </div>
+          <ItensContainer>
+            <Item>
+              <IconItem variant="shoppingCart">
+                <ShoppingCart size={16} weight="fill" />
+              </IconItem>
+              Compra simples e segura
+            </Item>
+            <Item>
+              <IconItem variant="package">
+                <Package size={16} weight="fill" />
+              </IconItem>
+              Embalagem mantém o café intacto
+            </Item>
+            <Item>
+              <IconItem variant="timer">
+                <Timer size={16} weight="fill" />
+              </IconItem>
+              Entrega rápida e rastreada
+            </Item>
+            <Item>
+              <IconItem variant="coffee">
+                <Coffee size={16} weight="fill" />
+              </IconItem>
+              O café chega fresquinho até você
+            </Item>
+          </ItensContainer>
+        </DescriptionContainer>
 
-        <div>
-          <img src={heroLogo} alt="" />
-        </div>
+        <CoffeeCupContainer src={heroLogo} alt="" />
       </HomeContainer>
+      <Coffees />
     </>
   );
 }
