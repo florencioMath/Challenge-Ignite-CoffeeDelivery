@@ -49,11 +49,15 @@ export function CoffeeCard({ coffee }: CoffeeProps) {
         </CoffeePrice>
         <CoffeeShopAmountContainer>
           <CoffeeShopQuantityMinusAndPlus>
-            <Minus size={14} weight="bold" />
+            <div>
+              <Minus size={14} weight="bold" />
+            </div>
           </CoffeeShopQuantityMinusAndPlus>
           <CoffeeShopQuantity>1</CoffeeShopQuantity>
           <CoffeeShopQuantityMinusAndPlus>
-            <Plus size={14} weight="bold" />
+            <div>
+              <Plus size={14} weight="bold" />
+            </div>
           </CoffeeShopQuantityMinusAndPlus>
         </CoffeeShopAmountContainer>
         <CartCard />

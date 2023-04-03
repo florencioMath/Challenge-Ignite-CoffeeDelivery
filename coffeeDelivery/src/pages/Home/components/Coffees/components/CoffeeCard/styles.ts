@@ -30,7 +30,7 @@ export const TagIten = styled.span`
   padding: 4px 8px;
   border-radius: 100px;
   text-transform: uppercase;
-  font-family: 'Roboto', sans-serif;
+  font-family: Roboto, sans-serif;
   font-weight: 700;
   font-size: 0.625rem;
 `;
@@ -44,7 +44,7 @@ export const CoffeeName = styled.h2`
 export const CoffeeDescription = styled.p`
   width: 216px;
   text-align: center;
-  font-family: 'Roboto', sans-serif;
+  font-family: Roboto, sans-serif;
   font-size: 0.875rem;
   line-height: 130%;
   color: ${(props) => props.theme['base-label']};
@@ -67,7 +67,7 @@ export const CoffeePrice = styled.span`
 `;
 
 export const CoffeePriceCurrency = styled.span`
-  font-family: 'Roboto', sans-serif;
+  font-family: Roboto, sans-serif;
   font-size: 0.875rem;
   font-weight: 400;
 `;
@@ -88,10 +88,15 @@ export const CoffeeShopQuantity = styled.span`
   align-items: center;
   justify-content: center;
   font-size: 1rem;
+  font-family: Roboto, sans-serif;
   color: ${(props) => props.theme['base-title']};
 `;
 
 export const CoffeeShopQuantityMinusAndPlus = styled.div`
   color: ${(props) => props.theme['purple']};
   cursor: pointer;
+
+  div {
+    display: flex;
+  }
 `;

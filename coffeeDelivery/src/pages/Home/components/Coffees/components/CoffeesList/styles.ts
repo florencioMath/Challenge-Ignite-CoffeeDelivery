@@ -8,6 +8,7 @@ export const CoffeesListContainer = styled.div`
   row-gap: 2.5rem;
   max-width: 1120px;
   width: 100%;
+  margin-bottom: 5rem;
 
   @media (max-width: 1000px) {
     grid-template-columns: repeat(3, 1fr);

@@ -7,7 +7,6 @@ export const CoffeesContainer = styled.div`
   max-width: calc(100vw - 20rem);
   width: 1440px;
   padding: 2rem 10rem;
-  height: 100%;
 
   h1 {
     font-weight: 800;
