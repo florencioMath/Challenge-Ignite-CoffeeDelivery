@@ -1,11 +1,14 @@
 import { CoffeesListContainer } from './styles';
-// import { CoffeesData } from '../../database/db';
+import { coffeesData } from '../../database/db';
+import { CoffeeCard } from '../CoffeeCard';
 
 export function CoffeesList() {
   return (
     <>
       <CoffeesListContainer>
-        {/* <h1>List of coffees</h1> */}
+        {coffeesData.map((coffee) => {
+          return <CoffeeCard key={coffee.id} coffee={coffee} />;
+        })}
       </CoffeesListContainer>
     </>
   );

@@ -8,4 +8,10 @@ export const CoffeesContainer = styled.div`
   width: 1440px;
   padding: 2rem 10rem;
   height: 100%;
+
+  h1 {
+    font-weight: 800;
+    font-size: 2rem;
+    color: ${(props) => props.theme['base-subtitle']};
+  }
 `;
