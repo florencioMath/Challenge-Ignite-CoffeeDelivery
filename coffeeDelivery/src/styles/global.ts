@@ -42,4 +42,23 @@ button {
   all: unset;
 }
 
+
+input {
+  min-height: 42px;
+  border-radius: 4px;
+  background: ${(props) => props.theme['base-input']};
+  border: 1px solid ${(props) => props.theme['base-button']};
+  padding: 0.75rem;
+  
+  &::placeholder {
+      color: ${(props) => props.theme['base-label']};
+  }
+
+  &:focus {
+  outline: 1px solid ${(props) => props.theme['yellow-dark']};
+  color: ${(props) => props.theme['base-text']};
+  }
+
+}
+
 `;
