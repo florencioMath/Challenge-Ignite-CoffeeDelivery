@@ -43,7 +43,7 @@ button {
 }
 
 
-input {
+input[type= 'text'] {
   min-height: 42px;
   border-radius: 4px;
   background: ${(props) => props.theme['base-input']};
