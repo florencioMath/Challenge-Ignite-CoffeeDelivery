@@ -1,14 +1,22 @@
-import { MapPinLine } from '@phosphor-icons/react';
+import {
+  Bank,
+  CreditCard,
+  CurrencyDollar,
+  MapPinLine,
+} from '@phosphor-icons/react';
 import {
   CheckoutContainer,
   FinishOrderContainer,
   FinishOrderFormCard,
   FinishOrderPaymentCard,
+  IconCurrencyDollar,
   IconMapPin,
   InfoContainer,
   InputAddressContainer,
   InputLabelContainer,
   InputNumeroComplementoContainer,
+  PaymentMethod,
+  PaymentMethodContainer,
   SelectedCaffeesCard,
   SelectedCaffeesContainer,
 } from './styles';
@@ -66,7 +74,40 @@ export function Checkout() {
               <input type="text" name="uf" id="uf" placeholder="UF" />
             </InputAddressContainer>
           </FinishOrderFormCard>
-          <FinishOrderPaymentCard></FinishOrderPaymentCard>
+          <FinishOrderPaymentCard>
+            <InfoContainer>
+              <IconCurrencyDollar>
+                <CurrencyDollar size={22} />
+              </IconCurrencyDollar>
+              <div>
+                <p>Pagamento</p>
+                <p>
+                  O pagamento é feito na entrega. Escolha a forma que deseja
+                  pagar
+                </p>
+              </div>
+            </InfoContainer>
+            <PaymentMethodContainer>
+              <PaymentMethod>
+                <input type="radio" name="paymentMethod" id="credit" />
+                <label htmlFor="credit">
+                  <CreditCard size={16} /> Cartão de Crédito
+                </label>
+              </PaymentMethod>
+              <PaymentMethod>
+                <input type="radio" name="paymentMethod" id="debit" />
+                <label htmlFor="debit">
+                  <Bank size={16} /> Cartão de Débito
+                </label>
+              </PaymentMethod>
+              <PaymentMethod>
+                <input type="radio" name="paymentMethod" id="money" />
+                <label htmlFor="money">
+                  <CurrencyDollar size={16} /> Dinheiro
+                </label>
+              </PaymentMethod>
+            </PaymentMethodContainer>
+          </FinishOrderPaymentCard>
         </FinishOrderContainer>
         <SelectedCaffeesContainer>
           <h2>Cafés selecionados</h2>

@@ -118,11 +118,69 @@ export const IconMapPin = styled.div`
   justify-content: center;
 `;
 
+export const IconCurrencyDollar = styled.div`
+  color: ${(props) => props.theme['purple']};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
 export const FinishOrderPaymentCard = styled.div`
   background: ${(props) => props.theme['base-card']};
   border-radius: 6px;
   width: 100%;
   height: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2.5rem;
+`;
+
+export const PaymentMethodContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+`;
+
+export const PaymentMethod = styled.div`
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+
+  input[type='radio'] {
+    height: 51px;
+    width: 100%;
+    width: 180px;
+    appearance: none;
+    border-radius: 6px;
+    background: ${(props) => props.theme['base-button']};
+    cursor: pointer;
+    position: absolute;
+  }
+
+  input[type='radio']:hover {
+    background: ${(props) => props.theme['base-hover']};
+  }
+
+  input[type='radio']:checked {
+    border: 1px solid ${(props) => props.theme['purple']};
+  }
+
+  label {
+    position: relative;
+    height: 51px;
+    width: 100%;
+    width: 180px;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1rem;
+  }
 `;
 
 export const SelectedCaffeesContainer = styled.div`
