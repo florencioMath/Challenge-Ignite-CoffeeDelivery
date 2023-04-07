@@ -10,6 +10,7 @@ import {
   FinishOrderFormCard,
   FinishOrderPaymentCard,
   IconCurrencyDollar,
+  IconLabel,
   IconMapPin,
   InfoContainer,
   InputAddressContainer,
@@ -33,8 +34,10 @@ export function Checkout() {
                 <MapPinLine size={22} />
               </IconMapPin>
               <div>
-                <p>Endereço de Entrega</p>
-                <p>Informe o endereço onde deseja receber seu pedido</p>
+                <p id="subtitle">Endereço de Entrega</p>
+                <p id="text">
+                  Informe o endereço onde deseja receber seu pedido
+                </p>
               </div>
             </InfoContainer>
             <input type="text" name="cep" id="cep" placeholder="CEP" />
@@ -80,8 +83,8 @@ export function Checkout() {
                 <CurrencyDollar size={22} />
               </IconCurrencyDollar>
               <div>
-                <p>Pagamento</p>
-                <p>
+                <p id="subtitle">Pagamento</p>
+                <p id="text">
                   O pagamento é feito na entrega. Escolha a forma que deseja
                   pagar
                 </p>
@@ -91,19 +94,28 @@ export function Checkout() {
               <PaymentMethod>
                 <input type="radio" name="paymentMethod" id="credit" />
                 <label htmlFor="credit">
-                  <CreditCard size={16} /> Cartão de Crédito
+                  <IconLabel>
+                    <CreditCard size={16} />
+                  </IconLabel>
+                  Cartão de Crédito
                 </label>
               </PaymentMethod>
               <PaymentMethod>
                 <input type="radio" name="paymentMethod" id="debit" />
                 <label htmlFor="debit">
-                  <Bank size={16} /> Cartão de Débito
+                  <IconLabel>
+                    <Bank size={16} />
+                  </IconLabel>
+                  Cartão de Débito
                 </label>
               </PaymentMethod>
               <PaymentMethod>
                 <input type="radio" name="paymentMethod" id="money" />
                 <label htmlFor="money">
-                  <CurrencyDollar size={16} /> Dinheiro
+                  <IconLabel>
+                    <CurrencyDollar size={16} />
+                  </IconLabel>
+                  Dinheiro
                 </label>
               </PaymentMethod>
             </PaymentMethodContainer>

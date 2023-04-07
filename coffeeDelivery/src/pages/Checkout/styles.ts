@@ -109,6 +109,21 @@ export const InfoContainer = styled.div`
   flex-direction: row;
   gap: 0.688rem;
   margin-bottom: 2rem;
+  align-items: flex-start;
+
+  #subtitle {
+    font-size: 1rem;
+    color: ${(props) => props.theme['base-subtitle']};
+    line-height: 130%;
+    font-family: Roboto, sans-serif;
+  }
+
+  #text {
+    font-size: 0.875rem;
+    color: ${(props) => props.theme['base-text']};
+    line-height: 130%;
+    font-family: Roboto, sans-serif;
+  }
 `;
 
 export const IconMapPin = styled.div`
@@ -116,6 +131,13 @@ export const IconMapPin = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+`;
+
+export const IconLabel = styled.div`
+  display: flex;
+  min-width: 16px;
+  min-height: 16px;
+  color: ${(props) => props.theme['purple']};
 `;
 
 export const IconCurrencyDollar = styled.div`
@@ -158,6 +180,8 @@ export const PaymentMethod = styled.div`
     background: ${(props) => props.theme['base-button']};
     cursor: pointer;
     position: absolute;
+    display: flex;
+    align-items: center;
   }
 
   input[type='radio']:hover {
@@ -180,6 +204,9 @@ export const PaymentMethod = styled.div`
     justify-content: center;
     gap: 0.75rem;
     padding: 1rem;
+    font-size: 0.75rem;
+    color: ${(props) => props.theme['base-text']};
+    font-family: Roboto, sans-serif;
   }
 `;
 
