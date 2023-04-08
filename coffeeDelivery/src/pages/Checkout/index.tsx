@@ -3,9 +3,15 @@ import {
   CreditCard,
   CurrencyDollar,
   MapPinLine,
+  Minus,
+  Plus,
+  Trash,
 } from '@phosphor-icons/react';
 import {
+  ButtonOrderConfirm,
   CheckoutContainer,
+  CoffeesAmountAndPrice,
+  CoffeesTotalPrice,
   FinishOrderContainer,
   FinishOrderFormCard,
   FinishOrderPaymentCard,
@@ -19,7 +25,18 @@ import {
   PaymentMethod,
   PaymentMethodContainer,
   SelectedCaffeesCard,
+  SelectedCoffeesCardContainer,
   SelectedCaffeesContainer,
+  TotalContainer,
+  CoffeeCardCheckoutContainer,
+  CoffeeCardCheckoutTitleCoffee,
+  CoffeeShopAmountContainer,
+  CoffeeShopQuantityMinusAndPlus,
+  CoffeeShopQuantity,
+  CoffeeRemoveButton,
+  CoffeeAmountAndRemoveContainer,
+  IconTrash,
+  TotalAmountOfCoffees,
 } from './styles';
 
 export function Checkout() {
@@ -123,7 +140,88 @@ export function Checkout() {
         </FinishOrderContainer>
         <SelectedCaffeesContainer>
           <h2>Cafés selecionados</h2>
-          <SelectedCaffeesCard></SelectedCaffeesCard>
+          <SelectedCaffeesCard>
+            <SelectedCoffeesCardContainer>
+              <CoffeeCardCheckoutContainer>
+                <img src="../../../public/coffees/americano.png" alt="" />
+                <div>
+                  <CoffeeCardCheckoutTitleCoffee>
+                    Expresso Tradicional
+                  </CoffeeCardCheckoutTitleCoffee>
+                  <CoffeeAmountAndRemoveContainer>
+                    <CoffeeShopAmountContainer>
+                      <CoffeeShopQuantityMinusAndPlus>
+                        <div>
+                          <Minus size={14} weight="bold" />
+                        </div>
+                      </CoffeeShopQuantityMinusAndPlus>
+                      <CoffeeShopQuantity>1</CoffeeShopQuantity>
+                      <CoffeeShopQuantityMinusAndPlus>
+                        <div>
+                          <Plus size={14} weight="bold" />
+                        </div>
+                      </CoffeeShopQuantityMinusAndPlus>
+                    </CoffeeShopAmountContainer>
+                    <CoffeeRemoveButton>
+                      <IconTrash>
+                        <Trash size={16} />
+                      </IconTrash>{' '}
+                      Remover
+                    </CoffeeRemoveButton>
+                  </CoffeeAmountAndRemoveContainer>
+                </div>
+                <TotalAmountOfCoffees>
+                  <span>R$ 9,90</span>
+                </TotalAmountOfCoffees>
+              </CoffeeCardCheckoutContainer>
+              <CoffeeCardCheckoutContainer>
+                <img src="../../../public/coffees/americano.png" alt="" />
+                <div>
+                  <CoffeeCardCheckoutTitleCoffee>
+                    Expresso Tradicional
+                  </CoffeeCardCheckoutTitleCoffee>
+                  <CoffeeAmountAndRemoveContainer>
+                    <CoffeeShopAmountContainer>
+                      <CoffeeShopQuantityMinusAndPlus>
+                        <div>
+                          <Minus size={14} weight="bold" />
+                        </div>
+                      </CoffeeShopQuantityMinusAndPlus>
+                      <CoffeeShopQuantity>1</CoffeeShopQuantity>
+                      <CoffeeShopQuantityMinusAndPlus>
+                        <div>
+                          <Plus size={14} weight="bold" />
+                        </div>
+                      </CoffeeShopQuantityMinusAndPlus>
+                    </CoffeeShopAmountContainer>
+                    <CoffeeRemoveButton>
+                      <IconTrash>
+                        <Trash size={16} />
+                      </IconTrash>{' '}
+                      Remover
+                    </CoffeeRemoveButton>
+                  </CoffeeAmountAndRemoveContainer>
+                </div>
+                <TotalAmountOfCoffees>
+                  <span>R$ 9,90</span>
+                </TotalAmountOfCoffees>
+              </CoffeeCardCheckoutContainer>
+            </SelectedCoffeesCardContainer>
+            <TotalContainer>
+              <CoffeesAmountAndPrice>
+                <p>Total de itens</p> <span>R$ 29,70</span>
+              </CoffeesAmountAndPrice>
+              <CoffeesAmountAndPrice>
+                <p>Entrega</p>
+                <span>R$ 3,50</span>
+              </CoffeesAmountAndPrice>
+              <CoffeesTotalPrice>
+                <p>Total</p>
+                <span>R$ 33,20</span>
+              </CoffeesTotalPrice>
+            </TotalContainer>
+            <ButtonOrderConfirm>Confirmar pedido</ButtonOrderConfirm>
+          </SelectedCaffeesCard>
         </SelectedCaffeesContainer>
       </CheckoutContainer>
     </>
