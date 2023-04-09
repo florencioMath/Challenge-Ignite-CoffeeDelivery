@@ -1,10 +1,13 @@
 import styled, { css } from 'styled-components';
 
 export const SuccessContainer = styled.div`
-  margin-top: 184px;
+  margin-top: 104px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  max-width: calc(100vw - 20rem);
+  width: 1440px;
+  padding: 5.75rem 10rem;
 `;
 
 export const TitleAndSubContainer = styled.div``;
@@ -20,9 +23,22 @@ export const DeliveryInfoContainer = styled.div`
   flex-direction: column;
   padding: 40px;
   gap: 32px;
-  border: 1px solid black;
+  border: 1px solid transparent;
+  background: linear-gradient(
+        ${(props) => props.theme['background']},
+        ${(props) => props.theme['background']}
+      )
+      padding-box,
+    linear-gradient(
+        to right,
+        ${(props) => props.theme['yellow-dark']},
+        ${(props) => props.theme['purple']}
+      )
+      border-box;
   border-radius: 6px 36px 6px 36px;
 `;
+
+// linear-gradient(90deg, rgba(219,172,44,1) 0%, rgba(128,71,248,1) 100%)
 
 export const DeliveryInfo = styled.div`
   display: flex;
