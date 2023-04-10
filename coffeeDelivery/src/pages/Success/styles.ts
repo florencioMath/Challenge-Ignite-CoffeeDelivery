@@ -63,7 +63,7 @@ interface IconItemProps {
   variant?: 'mapPin' | 'timer' | 'currencyDollar';
 }
 
-export const IconItem = styled(Icon)<IconItemProps>`
+export const IconItem = styled(Icon) <IconItemProps>`
   ${(props) =>
     props.variant === 'mapPin' &&
     css`

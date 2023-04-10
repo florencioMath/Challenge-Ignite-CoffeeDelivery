@@ -7,6 +7,13 @@ export const GlobalStyle = createGlobalStyle`
   box-sizing: border-box;
 }
 
+html {
+    @media screen and (min-width: 960px) {
+        margin-left: calc(100vw - 100%);
+        margin-right: 0;
+    }
+  }
+
 body {
   background: ${(props) => props.theme['background']};
   color: ${(props) => props.theme['base-text']};
