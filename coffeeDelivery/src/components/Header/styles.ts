@@ -9,6 +9,11 @@ export const HeaderContainer = styled.div`
   padding: 0px 25rem;
   position: fixed;
   background: ${(props) => props.theme['background']};
+  z-index: 1000;
+
+  @media ((min-width: 320px) and (max-width: 960px)) {
+    padding: 0px 2rem;
+  }
 `;
 
 export const LocationAndCartContainer = styled.div`

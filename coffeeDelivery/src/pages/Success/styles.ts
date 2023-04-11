@@ -8,9 +8,25 @@ export const SuccessContainer = styled.div`
   max-width: calc(100vw - 20rem);
   width: 1440px;
   padding: 5.75rem 10rem;
+
+  @media ((min-width: 320px) and (max-width: 960px)) {
+    max-width: calc(100vw - 1rem);
+    flex-direction: column-reverse;
+    gap: 2rem;
+    padding: 0px 1rem;
+  }
+  
 `;
 
 export const TitleAndSubContainer = styled.div``;
+
+export const IllustrationSucceessContainer = styled.div`
+  img {
+    margin-top: 2rem;
+    width: 100%;
+  }
+
+`;
 
 export const TitleAndDeliveryInfoContainer = styled.div`
   display: flex;
@@ -38,8 +54,6 @@ export const DeliveryInfoContainer = styled.div`
   border-radius: 6px 36px 6px 36px;
 `;
 
-// linear-gradient(90deg, rgba(219,172,44,1) 0%, rgba(128,71,248,1) 100%)
-
 export const DeliveryInfo = styled.div`
   display: flex;
   align-items: center;
@@ -63,7 +77,7 @@ interface IconItemProps {
   variant?: 'mapPin' | 'timer' | 'currencyDollar';
 }
 
-export const IconItem = styled(Icon)<IconItemProps>`
+export const IconItem = styled(Icon) <IconItemProps>`
   ${(props) =>
     props.variant === 'mapPin' &&
     css`
