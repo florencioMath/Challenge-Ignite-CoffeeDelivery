@@ -3,6 +3,7 @@ import {
   DeliveryInfoContainer,
   Icon,
   IconItem,
+  IllustrationSucceessContainer,
   Subtitle,
   SuccessContainer,
   Title,
@@ -52,9 +53,9 @@ export function CheckoutSuccess() {
           </DeliveryInfo>
         </DeliveryInfoContainer>
       </TitleAndDeliveryInfoContainer>
-      <div>
+      <IllustrationSucceessContainer>
         <img src={IllustrationSucceess} alt="" />
-      </div>
+      </IllustrationSucceessContainer>
     </SuccessContainer>
   );
 }

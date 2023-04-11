@@ -18,7 +18,6 @@ body {
   background: ${(props) => props.theme['background']};
   color: ${(props) => props.theme['base-text']};
   -webkit-font-smoothing: antialiased;
-  padding: 0 10rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -40,9 +39,7 @@ h1, h2 {
   html {
     font-size: 87.5%;
   }
-  body {
-    padding: 0 5rem;
-  }
+
 }
 
 button {

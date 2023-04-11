@@ -41,7 +41,6 @@ import {
 
 export function Checkout() {
   return (
-    <>
       <CheckoutContainer>
         <FinishOrderContainer>
           <h2>Complete seu pedido</h2>
@@ -224,6 +223,5 @@ export function Checkout() {
           </SelectedCaffeesCard>
         </SelectedCaffeesContainer>
       </CheckoutContainer>
-    </>
   );
 }

@@ -9,6 +9,14 @@ export const HomeContainer = styled.div`
   max-width: calc(100vw - 20rem);
   width: 1440px;
   padding: 5.75rem 10rem;
+
+  @media ((min-width: 320px) and (max-width: 960px)) {
+    padding: 0px 1rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+    max-width: calc(100vw - 1rem);
+  }
 `;
 
 export const BackgroundBlurContainer = styled.div`
@@ -23,11 +31,24 @@ export const BackgroundBlurContainer = styled.div`
   -webkit-filter: blur(130px);
 `;
 
-export const CoffeeCupContainer = styled.img``;
+export const CoffeeCupContainer = styled.img`
+  @media ((min-width: 320px) and (max-width: 960px)){
+    width: 320px;
+  }
+`;
 
 export const DescriptionContainer = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
+  
+  @media ((min-width: 320px) and (max-width: 960px)){
+    padding: 0px 1rem;
+    
+    h1 {
+    font-size: 2rem !important;
+    }
+  }
 
   h1 {
     color: ${(props) => props.theme['base-title']};
@@ -35,6 +56,10 @@ export const DescriptionContainer = styled.div`
     width: 36.75rem;
     font-weight: 800;
     margin-bottom: 1rem;
+    @media ((min-width: 320px) and (max-width: 960px)){
+    width: 100%;
+    text-align: center;
+  }
   }
 
   p {
@@ -53,6 +78,12 @@ export const ItensContainer = styled.div`
   column-gap: 2.5rem;
   width: 36.6875rem;
   margin-top: 4.125rem;
+
+
+  @media ((min-width: 320px) and (max-width: 960px)){
+    width: 100%;
+    margin-top: 2rem;
+  }
 `;
 
 export const Item = styled.div`
@@ -80,7 +111,7 @@ interface IconItemProps {
   variant?: 'shoppingCart' | 'package' | 'timer' | 'coffee';
 }
 
-export const IconItem = styled(BaseIconItem)<IconItemProps>`
+export const IconItem = styled(BaseIconItem) <IconItemProps>`
   ${(props) =>
     props.variant === 'shoppingCart' &&
     css`

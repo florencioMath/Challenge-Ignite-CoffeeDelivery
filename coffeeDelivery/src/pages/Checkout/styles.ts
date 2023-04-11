@@ -8,6 +8,11 @@ export const CheckoutContainer = styled.div`
   max-width: calc(100vw - 20rem);
   width: 1440px;
   padding: 5.75rem 10rem;
+  
+  @media ((min-width: 320px) and (max-width: 960px)) {
+    max-width: calc(100vw - 1rem);
+    padding: 0px 1rem;
+  }
 
   h2 {
     font-size: 1.125rem;
@@ -80,6 +85,11 @@ export const InputNumeroComplementoContainer = styled.div`
   justify-content: space-between;
   width: 100%;
   column-gap: 0.75rem;
+
+  @media ((min-width: 320px) and (max-width: 960px)) {
+    gap: .5rem;
+    flex-wrap: wrap;
+  }
 `;
 
 export const InputAddressContainer = styled.div`
@@ -88,6 +98,10 @@ export const InputAddressContainer = styled.div`
   justify-content: space-between;
   width: 100%;
   column-gap: 0.75rem;
+  @media ((min-width: 320px) and (max-width: 960px)) {
+    gap: .5rem;
+    flex-wrap: wrap;
+  }
 
   input {
     &#bairro {
@@ -151,7 +165,7 @@ export const FinishOrderPaymentCard = styled.div`
   background: ${(props) => props.theme['base-card']};
   border-radius: 6px;
   width: 100%;
-  height: 200px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -161,13 +175,18 @@ export const FinishOrderPaymentCard = styled.div`
 export const PaymentMethodContainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   gap: 0.75rem;
+  width: 100%;
+
+  @media ((min-width: 320px) and (max-width: 960px)) {
+    flex-wrap: wrap;
+  }
 `;
 
 export const PaymentMethod = styled.div`
-  height: 100%;
-  width: 100%;
+
+  display: flex;
   align-items: center;
   justify-content: center;
 
