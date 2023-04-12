@@ -1,6 +1,13 @@
-import { ReactNode, createContext, useContext, useState } from 'react';
+import {
+  ReactNode,
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+} from 'react';
 import { Coffee } from '../pages/Home/components/Coffees/components/CoffeeCard';
 import { produce } from 'immer';
+import { json } from 'react-router-dom';
 
 export interface CartItem extends Coffee {
   quantity: number;
@@ -22,10 +29,19 @@ interface CartContextProviderProps {
   children: ReactNode;
 }
 
+const COFFEE_ITEMS_STORAGE_KEY = 'florencioMath-coffeeDelivery:CartItems';
+
 export const CartContext = createContext({} as CartContextType);
 
 export function CartContextProvider({ children }: CartContextProviderProps) {
-  const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  const [cartItems, setCartItems] = useState<CartItem[]>(() => {
+    const storedCartItems = localStorage.getItem(COFFEE_ITEMS_STORAGE_KEY);
+    if (storedCartItems) {
+      return JSON.parse(storedCartItems);
+    } else {
+      return [];
+    }
+  });
   const cartQuantity = cartItems.length;
   const cartItemsTotal = cartItems.reduce((total, cartItem) => {
     return (total = cartItem.price + cartItem.quantity);
@@ -79,6 +95,10 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
 
     setCartItems(newCart);
   }
+
+  useEffect(() => {
+    localStorage.setItem(COFFEE_ITEMS_STORAGE_KEY, JSON.stringify(cartItems));
+  }, [cartItems]);
 
   return (
     <CartContext.Provider

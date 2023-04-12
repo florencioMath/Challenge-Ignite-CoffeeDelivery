@@ -232,6 +232,7 @@ export const PaymentMethod = styled.div`
 export const SelectedCaffeesContainer = styled.div`
   max-width: 448px;
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -241,11 +242,11 @@ export const SelectedCaffeesCard = styled.div`
   background: ${(props) => props.theme['base-card']};
   border-radius: 6px 44px 6px 44px;
   width: 100%;
-  height: 498px;
   display: flex;
   flex-direction: column;
   gap: 1rem;
   padding: 2.5rem;
+  margin-bottom: 2rem;
 `;
 
 export const SelectedCoffeesCardContainer = styled.div`
