@@ -1,5 +1,4 @@
 import { ShoppingCart } from '@phosphor-icons/react';
-import { Link } from 'react-router-dom';
 import { ShoppingCartWrapper } from './styles';
 
 export function CartCard() {

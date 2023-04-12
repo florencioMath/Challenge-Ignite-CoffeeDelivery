@@ -14,8 +14,10 @@ import {
   CoffeeShopQuantity,
   CoffeeShopQuantityMinusAndPlus,
 } from './styles';
+import { useCart } from '../../../../../../contexts/CartContext';
+import { useState } from 'react';
 
-interface Coffee {
+export interface Coffee {
   id: number;
   tags: string[];
   name: string;
@@ -29,6 +31,26 @@ interface CoffeeProps {
 }
 
 export function CoffeeCard({ coffee }: CoffeeProps) {
+  const { addCoffeeToCart } = useCart();
+  const [quantity, setQuantity] = useState(1);
+
+  function handleIncrease() {
+    setQuantity((state) => state + 1);
+  }
+
+  function handleDecrease() {
+    setQuantity((state) => state - 1);
+  }
+
+  function handleAddToCart() {
+    const coffeeToAdd = {
+      ...coffee,
+      quantity,
+    };
+
+    addCoffeeToCart(coffeeToAdd);
+  }
+
   return (
     <CoffeCard>
       <ImageContainer src={`/coffees/${coffee.img}`} alt="" />
@@ -49,18 +71,24 @@ export function CoffeeCard({ coffee }: CoffeeProps) {
         </CoffeePrice>
         <CoffeeShopAmountContainer>
           <CoffeeShopQuantityMinusAndPlus>
-            <div>
-              <Minus size={14} weight="bold" />
-            </div>
+            <button disabled={quantity <= 1} onClick={handleDecrease}>
+              <div>
+                <Minus size={14} weight="bold" />
+              </div>
+            </button>
           </CoffeeShopQuantityMinusAndPlus>
-          <CoffeeShopQuantity>1</CoffeeShopQuantity>
+          <CoffeeShopQuantity>{quantity}</CoffeeShopQuantity>
           <CoffeeShopQuantityMinusAndPlus>
-            <div>
-              <Plus size={14} weight="bold" />
-            </div>
+            <button onClick={handleIncrease}>
+              <div>
+                <Plus size={14} weight="bold" />
+              </div>
+            </button>
           </CoffeeShopQuantityMinusAndPlus>
         </CoffeeShopAmountContainer>
-        <CartCard />
+        <button onClick={handleAddToCart}>
+          <CartCard />
+        </button>
       </CoffeeShopContainer>
     </CoffeCard>
   );
