@@ -1,4 +1,4 @@
-import { ReactNode, createContext, useState } from "react"
+import { ReactNode, createContext, useContext, useState } from "react"
 import { Coffee } from "../pages/Home/components/Coffees/components/CoffeeCard"
 
 export interface CartItem extends Coffee {
@@ -23,4 +23,8 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
       {children}
     </CartContext.Provider>
   )
+}
+
+export function useCart() {
+  return useContext(CartContext)
 }
