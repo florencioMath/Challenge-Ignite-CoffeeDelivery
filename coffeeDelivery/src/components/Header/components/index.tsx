@@ -1,14 +1,16 @@
 import { ShoppingCart } from '@phosphor-icons/react';
 import { Link } from 'react-router-dom';
 import { CartAmount, ShoppingCartWrapper } from './styles';
+import { useCart } from '../../../contexts/CartContext';
 
 export function Cart() {
-  const cartTotal: number = 0;
+  const { cartQuantity } = useCart();
+
   return (
     <Link to={'/checkout'}>
       <ShoppingCartWrapper>
         <ShoppingCart size={22} weight="fill" />
-        {cartTotal > 0 ? <CartAmount>{cartTotal}</CartAmount> : null}
+        {cartQuantity >= 1 ? <CartAmount>{cartQuantity}</CartAmount> : null}
       </ShoppingCartWrapper>
     </Link>
   );
