@@ -24,6 +24,7 @@ import * as zod from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { FormProvider, useForm } from 'react-hook-form';
 import { PaymentMethods } from './components/PaymentMethods';
+import { useNavigate } from 'react-router-dom';
 
 enum PaymentMethodsEnum {
   credit = 'credit',
@@ -66,10 +67,11 @@ export function Checkout() {
   });
 
   const { handleSubmit } = confirmOrderForm;
-
+  const navigate = useNavigate();
   function handleConfirmOrder(data: ConfirOrderFormData) {
-    console.log(data);
-    console.log('Confirmar Pedido');
+    navigate('/success', {
+      state: data,
+    });
   }
 
   return (
