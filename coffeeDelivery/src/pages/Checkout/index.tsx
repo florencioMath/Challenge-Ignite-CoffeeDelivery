@@ -1,9 +1,4 @@
-import {
-  Bank,
-  CreditCard,
-  CurrencyDollar,
-  MapPinLine,
-} from '@phosphor-icons/react';
+import { CurrencyDollar, MapPinLine } from '@phosphor-icons/react';
 import {
   ButtonOrderConfirm,
   CheckoutContainer,
@@ -13,7 +8,6 @@ import {
   FinishOrderFormCard,
   FinishOrderPaymentCard,
   IconCurrencyDollar,
-  IconLabel,
   IconMapPin,
   InfoContainer,
   PaymentMethodContainer,
@@ -22,7 +16,6 @@ import {
   SelectedCaffeesContainer,
   TotalContainer,
   CompleteOrderContainer,
-  PaymentMethod,
 } from './styles';
 import { CoffeeCartCard } from './components/CoffeeCardCart';
 import { useCart } from '../../contexts/CartContext';
@@ -30,6 +23,7 @@ import { CompleteOrderForm } from './components/CompleteOrderForm';
 import * as zod from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { FormProvider, useForm } from 'react-hook-form';
+import { PaymentMethods } from './components/PaymentMethods';
 
 const confirmOrderFormValidatorScheme = zod.object({
   cep: zod.string().min(1, 'Informe o CEP'),
@@ -39,6 +33,7 @@ const confirmOrderFormValidatorScheme = zod.object({
   bairro: zod.string().min(1, 'Informe o Bairro'),
   cidade: zod.string().min(1, 'Informe a Cidade'),
   uf: zod.string().min(1, 'Informe a UF'),
+  paymentMethod: zod.enum(['credit', 'debit', 'money']),
 });
 
 export type OrderData = zod.infer<typeof confirmOrderFormValidatorScheme>;
@@ -101,33 +96,7 @@ export function Checkout() {
                 </div>
               </InfoContainer>
               <PaymentMethodContainer>
-                <PaymentMethod>
-                  <input type="radio" name="paymentMethod" id="credit" />
-                  <label htmlFor="credit">
-                    <IconLabel>
-                      <CreditCard size={16} />
-                    </IconLabel>
-                    Cartão de Crédito
-                  </label>
-                </PaymentMethod>
-                <PaymentMethod>
-                  <input type="radio" name="paymentMethod" id="debit" />
-                  <label htmlFor="debit">
-                    <IconLabel>
-                      <Bank size={16} />
-                    </IconLabel>
-                    Cartão de Débito
-                  </label>
-                </PaymentMethod>
-                <PaymentMethod>
-                  <input type="radio" name="paymentMethod" id="money" />
-                  <label htmlFor="money">
-                    <IconLabel>
-                      <CurrencyDollar size={16} />
-                    </IconLabel>
-                    Dinheiro
-                  </label>
-                </PaymentMethod>
+                <PaymentMethods />
               </PaymentMethodContainer>
             </FinishOrderPaymentCard>
           </FinishOrderContainer>
