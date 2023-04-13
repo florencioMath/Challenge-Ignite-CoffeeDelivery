@@ -52,7 +52,7 @@ export type OrderData = zod.infer<typeof confirmOrderFormValidatorScheme>;
 type ConfirOrderFormData = OrderData;
 
 export function Checkout() {
-  const { cartItems, cartItemsTotal, cartQuantity } = useCart();
+  const { cartItems, cartItemsTotal, cartQuantity, cleanCart } = useCart();
   const cartTotal = 3.5 + cartItemsTotal;
 
   const formattedItemsTotal = cartItemsTotal.toLocaleString('pt-BR', {
@@ -72,6 +72,7 @@ export function Checkout() {
     navigate('/success', {
       state: data,
     });
+    cleanCart();
   }
 
   return (
