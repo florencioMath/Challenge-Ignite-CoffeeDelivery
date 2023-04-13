@@ -9,8 +9,8 @@ import {
   CoffeeShopQuantityMinusAndPlus,
   IconTrash,
 } from './styles';
-import { TotalAmountOfCoffees } from '../styles';
-import { CartItem, useCart } from '../../../contexts/CartContext';
+import { TotalAmountOfCoffees } from '../../styles';
+import { CartItem, useCart } from '../../../../contexts/CartContext';
 
 interface CoffeeCartCardProps {
   coffee: CartItem;

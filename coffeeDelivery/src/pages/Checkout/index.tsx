@@ -3,9 +3,6 @@ import {
   CreditCard,
   CurrencyDollar,
   MapPinLine,
-  Minus,
-  Plus,
-  Trash,
 } from '@phosphor-icons/react';
 import {
   ButtonOrderConfirm,
@@ -29,7 +26,7 @@ import {
   SelectedCaffeesContainer,
   TotalContainer,
 } from './styles';
-import { CoffeeCartCard } from './components';
+import { CoffeeCartCard } from './components/CoffeeCardCart';
 import { useCart } from '../../contexts/CartContext';
 
 export function Checkout() {
