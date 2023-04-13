@@ -71,7 +71,11 @@ export function CoffeeCard({ coffee }: CoffeeProps) {
         </CoffeePrice>
         <CoffeeShopAmountContainer>
           <CoffeeShopQuantityMinusAndPlus>
-            <button disabled={quantity <= 1} onClick={handleDecrease}>
+            <button
+              type="button"
+              disabled={quantity <= 1}
+              onClick={handleDecrease}
+            >
               <div>
                 <Minus size={14} weight="bold" />
               </div>
@@ -79,14 +83,14 @@ export function CoffeeCard({ coffee }: CoffeeProps) {
           </CoffeeShopQuantityMinusAndPlus>
           <CoffeeShopQuantity>{quantity}</CoffeeShopQuantity>
           <CoffeeShopQuantityMinusAndPlus>
-            <button onClick={handleIncrease}>
+            <button type="button" onClick={handleIncrease}>
               <div>
                 <Plus size={14} weight="bold" />
               </div>
             </button>
           </CoffeeShopQuantityMinusAndPlus>
         </CoffeeShopAmountContainer>
-        <button onClick={handleAddToCart}>
+        <button type="button" onClick={handleAddToCart}>
           <CartCard />
         </button>
       </CoffeeShopContainer>

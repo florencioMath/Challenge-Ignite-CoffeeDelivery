@@ -9,8 +9,8 @@ import {
   CoffeeShopQuantityMinusAndPlus,
   IconTrash,
 } from './styles';
-import { TotalAmountOfCoffees } from '../styles';
-import { CartItem, useCart } from '../../../contexts/CartContext';
+import { TotalAmountOfCoffees } from '../../styles';
+import { CartItem, useCart } from '../../../../contexts/CartContext';
 
 interface CoffeeCartCardProps {
   coffee: CartItem;
@@ -44,7 +44,11 @@ export function CoffeeCartCard({ coffee }: CoffeeCartCardProps) {
         <CoffeeAmountAndRemoveContainer>
           <CoffeeShopAmountContainer>
             <CoffeeShopQuantityMinusAndPlus>
-              <button onClick={handleDecrease} disabled={coffee.quantity <= 1}>
+              <button
+                type="button"
+                onClick={handleDecrease}
+                disabled={coffee.quantity <= 1}
+              >
                 <div>
                   <Minus size={14} weight="bold" />
                 </div>
@@ -52,14 +56,14 @@ export function CoffeeCartCard({ coffee }: CoffeeCartCardProps) {
             </CoffeeShopQuantityMinusAndPlus>
             <CoffeeShopQuantity>{coffee.quantity}</CoffeeShopQuantity>
             <CoffeeShopQuantityMinusAndPlus>
-              <button onClick={handleIncrease}>
+              <button type="button" onClick={handleIncrease}>
                 <div>
                   <Plus size={14} weight="bold" />
                 </div>
               </button>
             </CoffeeShopQuantityMinusAndPlus>
           </CoffeeShopAmountContainer>
-          <button onClick={handleRemove}>
+          <button type="button" onClick={handleRemove}>
             <CoffeeRemoveButton>
               <IconTrash>
                 <Trash size={16} />
