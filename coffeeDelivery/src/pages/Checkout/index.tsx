@@ -16,9 +16,6 @@ import {
   IconLabel,
   IconMapPin,
   InfoContainer,
-  InputAddressContainer,
-  InputLabelContainer,
-  InputNumeroComplementoContainer,
   PaymentMethod,
   PaymentMethodContainer,
   SelectedCaffeesCard,
@@ -28,6 +25,7 @@ import {
 } from './styles';
 import { CoffeeCartCard } from './components/CoffeeCardCart';
 import { useCart } from '../../contexts/CartContext';
+import { CompleteOrderForm } from './components/CompleteOrderForm';
 
 export function Checkout() {
   const { cartItems, cartItemsTotal, cartQuantity } = useCart();
@@ -54,27 +52,7 @@ export function Checkout() {
               <p id="text">Informe o endereço onde deseja receber seu pedido</p>
             </div>
           </InfoContainer>
-          <input type="text" name="cep" id="cep" placeholder="CEP" />
-          <input type="text" name="rua" id="rua" placeholder="Rua" />
-          <InputNumeroComplementoContainer>
-            <input type="text" name="numero" id="numero" placeholder="Número" />
-            <InputLabelContainer>
-              <input
-                type="text"
-                name="complemento"
-                id="complemento"
-                placeholder="Complemento"
-              />
-              <label htmlFor="complemento" id="labelComplemento">
-                Opcional
-              </label>
-            </InputLabelContainer>
-          </InputNumeroComplementoContainer>
-          <InputAddressContainer>
-            <input type="text" name="bairro" id="bairro" placeholder="Bairro" />
-            <input type="text" name="cidade" id="cidade" placeholder="Cidade" />
-            <input type="text" name="uf" id="uf" placeholder="UF" />
-          </InputAddressContainer>
+          <CompleteOrderForm />
         </FinishOrderFormCard>
         <FinishOrderPaymentCard>
           <InfoContainer>
