@@ -44,3 +44,31 @@ export const PaymentMethod = styled.div`
     font-family: Roboto, sans-serif;
   }
 `;
+
+export const PaymentsWrapper = styled.div`
+display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 0.75rem;
+  width: 100%;
+
+  @media ((min-width: 320px) and (max-width: 960px)) {
+    flex-wrap: wrap;
+  }
+`;
+
+export const PaymentsContainer = styled.div`
+
+display: flex;
+gap: 0.75rem;
+flex-direction: column;
+
+  span {
+    margin-top: .5rem;
+    align-self: center;
+    font-size: 1rem;
+    font-family: Roboto, sans-serif;
+    font-weight: 700;
+    color: red;
+  }
+`;
