@@ -23,6 +23,9 @@ export const CheckoutContainer = styled.div`
   }
 `;
 
+export const CompleteOrderContainer = styled.form``;
+
+
 export const FinishOrderContainer = styled.div`
   max-width: 640px;
   width: 100%;

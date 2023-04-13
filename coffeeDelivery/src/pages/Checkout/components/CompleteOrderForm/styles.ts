@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-export const CompleteOrderContainer = styled.form``;
-
 export const InputNumeroComplementoContainer = styled.div`
   display: flex;
   align-items: center;
