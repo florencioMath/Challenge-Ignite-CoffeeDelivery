@@ -3,11 +3,10 @@ import {
   createContext,
   useContext,
   useEffect,
-  useState,
+  useReducer,
 } from 'react';
 import { Coffee } from '../pages/Home/components/Coffees/components/CoffeeCard';
 import { produce } from 'immer';
-import { json } from 'react-router-dom';
 
 export interface CartItem extends Coffee {
   quantity: number;
@@ -32,15 +31,59 @@ interface CartContextProviderProps {
 
 const COFFEE_ITEMS_STORAGE_KEY = 'florencioMath-coffeeDelivery:CartItems';
 
+const cartReducer = (state: CartItem[], action: any) => {
+  switch (action.type) {
+    case 'ADD_COFFEE':
+      const coffeeAlreadyExistsInCart = state.findIndex(
+        (cartItem) => cartItem.id === action.payload.id
+      );
+      if (coffeeAlreadyExistsInCart < 0) {
+        return produce(state, (draft) => {
+          draft.push(action.payload);
+        });
+      } else {
+        return produce(state, (draft) => {
+          draft[coffeeAlreadyExistsInCart].quantity += action.payload.quantity;
+        });
+      }
+    case 'CHANGE_QUANTITY':
+      const coffeeExistsInCart = state.findIndex(
+        (cartItem) => cartItem.id === action.payload.cartItemId
+      );
+      if (coffeeExistsInCart >= 0) {
+        const item = state[coffeeExistsInCart];
+        return produce(state, (draft) => {
+          draft[coffeeExistsInCart].quantity =
+            action.payload.type === 'increase'
+              ? item.quantity + 1
+              : item.quantity - 1;
+        });
+      }
+    case 'REMOVE_ITEM':
+      const coffeeToRemoveIndex = state.findIndex(
+        (cartItem) => cartItem.id === action.payload.cartItemId
+      );
+      if (coffeeToRemoveIndex >= 0) {
+        return produce(state, (draft) => {
+          draft.splice(coffeeToRemoveIndex, 1);
+        });
+      }
+    case 'CLEAN_CART':
+      return [];
+    default:
+      return state;
+  }
+};
+
 export const CartContext = createContext({} as CartContextType);
 
 export function CartContextProvider({ children }: CartContextProviderProps) {
-  const [cartItems, setCartItems] = useState<CartItem[]>(() => {
+  const [cartItems, dispatch] = useReducer(cartReducer, [], (initialValue) => {
     const storedCartItems = localStorage.getItem(COFFEE_ITEMS_STORAGE_KEY);
     if (storedCartItems) {
       return JSON.parse(storedCartItems);
     } else {
-      return [];
+      return initialValue;
     }
   });
   const cartQuantity = cartItems.length;
@@ -49,77 +92,48 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
   }, 0);
 
   function addCoffeeToCart(coffee: CartItem) {
-    const coffeeAlreadyExistsInCart = cartItems.findIndex(
-      (cartItem) => cartItem.id === coffee.id
-    );
-
-    const newCart = produce(cartItems, (draft) => {
-      if (coffeeAlreadyExistsInCart < 0) {
-        draft.push(coffee);
-      } else {
-        draft[coffeeAlreadyExistsInCart].quantity += coffee.quantity;
-      }
+    dispatch({
+      type: 'ADD_COFFEE',
+      payload: coffee,
     });
-
-    setCartItems(newCart);
   }
 
   function changeCartItemQuantity(
     cartItemId: number,
     type: 'increase' | 'decrease'
   ) {
-    const newCart = produce(cartItems, (draft) => {
-      const coffeeExistsInCart = cartItems.findIndex(
-        (cartItem) => cartItem.id === cartItemId
-      );
-
-      if (coffeeExistsInCart >= 0) {
-        const item = draft[coffeeExistsInCart];
-        draft[coffeeExistsInCart].quantity =
-          type === 'increase' ? item.quantity + 1 : item.quantity - 1;
-      }
+    dispatch({
+      type: 'CHANGE_QUANTITY',
+      payload: { cartItemId, type },
     });
-
-    setCartItems(newCart);
   }
 
   function removeCartItem(cartItemId: number) {
-    const newCart = produce(cartItems, (draft) => {
-      const coffeeExistsInCart = cartItems.findIndex(
-        (cartItem) => cartItem.id === cartItemId
-      );
-
-      if (coffeeExistsInCart >= 0) {
-        draft.splice(coffeeExistsInCart, 1);
-      }
+    dispatch({
+      type: 'REMOVE_ITEM',
+      payload: { cartItemId },
     });
-
-    setCartItems(newCart);
   }
 
   function cleanCart() {
-    setCartItems([]);
+    dispatch({ type: 'CLEAN_CART' });
   }
 
   useEffect(() => {
     localStorage.setItem(COFFEE_ITEMS_STORAGE_KEY, JSON.stringify(cartItems));
   }, [cartItems]);
 
-  return (
-    <CartContext.Provider
-      value={{
-        cartItems,
-        addCoffeeToCart,
-        cartQuantity,
-        changeCartItemQuantity,
-        removeCartItem,
-        cartItemsTotal,
-        cleanCart,
-      }}
-    >
-      {children}
-    </CartContext.Provider>
-  );
+  const value: CartContextType = {
+    cartItems,
+    addCoffeeToCart,
+    cartQuantity,
+    changeCartItemQuantity,
+    removeCartItem,
+    cartItemsTotal,
+    cleanCart,
+  };
+
+  return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 }
 
 export function useCart() {
