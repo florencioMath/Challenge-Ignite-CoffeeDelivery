@@ -9,7 +9,7 @@ export const CheckoutContainer = styled.div`
   width: 1440px;
   padding: 5.75rem 10rem;
   
-  @media ((min-width: 90px) and (max-width: 960px)) {
+  @media ((min-width: 320px) and (max-width: 960px)) {
     max-width: calc(100vw - 1rem);
     padding: 0px 1rem;
   }
@@ -143,7 +143,7 @@ export const PaymentMethodContainer = styled.div`
   gap: 0.75rem;
   width: 100%;
 
-  @media ((min-width: 90px) and (max-width: 960px)) {
+  @media ((min-width: 320px) and (max-width: 960px)) {
     flex-wrap: wrap;
   }
 `;

@@ -10,7 +10,7 @@ export const HomeContainer = styled.div`
   width: 1440px;
   padding: 5.75rem 10rem;
 
-  @media ((min-width: 90px) and (max-width: 960px)) {
+  @media ((min-width: 320px) and (max-width: 960px)) {
     padding: 0px 1rem;
     display: flex;
     align-items: center;
@@ -32,7 +32,7 @@ export const BackgroundBlurContainer = styled.div`
 `;
 
 export const CoffeeCupContainer = styled.img`
-  @media ((min-width: 90px) and (max-width: 960px)){
+  @media ((min-width: 320px) and (max-width: 960px)){
     width: 320px;
   }
 `;
@@ -42,7 +42,7 @@ export const DescriptionContainer = styled.div`
   flex-direction: column;
   width: 100%;
   
-  @media ((min-width: 90px) and (max-width: 960px)){
+  @media ((min-width: 320px) and (max-width: 960px)){
     padding: 0px 1rem;
     
     h1 {
@@ -56,7 +56,7 @@ export const DescriptionContainer = styled.div`
     width: 36.75rem;
     font-weight: 800;
     margin-bottom: 1rem;
-    @media ((min-width: 90px) and (max-width: 960px)){
+    @media ((min-width: 320px) and (max-width: 960px)){
     width: 100%;
     text-align: center;
   }
@@ -80,7 +80,7 @@ export const ItensContainer = styled.div`
   margin-top: 4.125rem;
 
 
-  @media ((min-width: 90px) and (max-width: 960px)){
+  @media ((min-width: 320px) and (max-width: 960px)){
     width: 100%;
     margin-top: 2rem;
   }
