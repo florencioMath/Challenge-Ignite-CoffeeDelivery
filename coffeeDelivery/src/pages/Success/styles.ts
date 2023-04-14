@@ -9,7 +9,7 @@ export const SuccessContainer = styled.div`
   width: 1440px;
   padding: 5.75rem 10rem;
 
-  @media ((min-width: 120px) and (max-width: 960px)) {
+  @media ((min-width: 90px) and (max-width: 960px)) {
     max-width: calc(100vw - 1rem);
     flex-direction: column-reverse;
     gap: 2rem;

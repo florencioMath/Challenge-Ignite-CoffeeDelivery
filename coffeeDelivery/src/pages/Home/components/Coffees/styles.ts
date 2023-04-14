@@ -15,7 +15,7 @@ export const CoffeesContainer = styled.div`
     margin-top: 2rem;
   }
 
-  @media ((min-width: 120px) and (max-width: 960px)){
+  @media ((min-width: 90px) and (max-width: 960px)){
     width: 100%;
     padding: 0px 1rem;
     max-width: calc(100vw - 1rem);

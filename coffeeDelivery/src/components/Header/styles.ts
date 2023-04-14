@@ -11,7 +11,7 @@ export const HeaderContainer = styled.div`
   background: ${(props) => props.theme['background']};
   z-index: 1000;
 
-  @media ((min-width: 120px) and (max-width: 960px)) {
+  @media ((min-width: 90px) and (max-width: 960px)) {
     padding: 0px 1rem;
     justify-content: space-between;
     width: 100%;
@@ -24,7 +24,7 @@ export const LocationAndCartContainer = styled.div`
   gap: 0.75rem;
   height: 38px;
 
-  @media ((min-width: 120px) and (max-width: 960px)) {
+  @media ((min-width: 90px) and (max-width: 960px)) {
     gap: 0.75rem;
   }
 `;
@@ -36,7 +36,7 @@ export const Logo = styled.div`
     justify-content: center;
   }
 
-  @media ((min-width: 120px) and (max-width: 960px)) {
+  @media ((min-width: 90px) and (max-width: 960px)) {
     img {
       height: 38px;
       width: 50px;
@@ -55,7 +55,7 @@ export const LocaleWrapper = styled.div`
   border-radius: 6px;
   gap: 0.3rem !important;
 
-  @media ((min-width: 120px) and (max-width: 960px)) {
+  @media ((min-width: 90px) and (max-width: 960px)) {
       height: 38px;
       width: 80px;
 
@@ -70,7 +70,7 @@ export const Icon = styled.div`
   display: flex;
   align-items: center;
 
-  @media ((min-width: 120px) and (max-width: 960px)) {
+  @media ((min-width: 90px) and (max-width: 960px)) {
       height: 12px;
       width: 12px;
   }

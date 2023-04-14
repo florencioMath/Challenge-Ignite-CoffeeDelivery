@@ -14,7 +14,7 @@ export const CoffeCard = styled.div`
 export const ImageContainer = styled.img`
   margin-top: -20px;
   min-height: 120px;
-  min-width: 120px;
+  min-width: 90px;
 `;
 
 export const TagContainer = styled.div`
