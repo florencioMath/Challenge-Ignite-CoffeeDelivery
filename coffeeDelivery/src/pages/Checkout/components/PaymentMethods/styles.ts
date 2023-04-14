@@ -52,7 +52,7 @@ display: flex;
   gap: 0.75rem;
   width: 100%;
 
-  @media ((min-width: 320px) and (max-width: 960px)) {
+  @media ((min-width: 120px) and (max-width: 960px)) {
     flex-wrap: wrap;
   }
 `;
