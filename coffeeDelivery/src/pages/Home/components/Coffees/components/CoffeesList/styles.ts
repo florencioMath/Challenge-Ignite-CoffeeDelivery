@@ -12,7 +12,7 @@ export const CoffeesListContainer = styled.div`
   width: 100%;
   margin-bottom: 5rem;
 
-  @media ((min-width: 320px) and (max-width: 960px)){
+  @media ((min-width: 120px) and (max-width: 960px)){
     width: 100%;
     max-width: calc(100vw - 1rem);
   }
