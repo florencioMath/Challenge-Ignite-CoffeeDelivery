@@ -60,10 +60,10 @@ export function CheckoutSuccess() {
             <p>
               Entrega em{' '}
               <b>
-                Rua {state.rua}, {state.numero}
+                {state.logradouro}, {state.numero}
               </b>{' '}
               <br />
-              {state.bairro} - {state.cidade}, {state.uf}
+              {state.bairro} - {state.localidade}, {state.uf}
             </p>
           </DeliveryInfo>
           <DeliveryInfo>
