@@ -6,7 +6,7 @@ import {
   useReducer,
 } from 'react';
 import { Coffee } from '../pages/Home/components/Coffees/components/CoffeeCard';
-import { produce } from 'immer';
+import { cartReducer } from '../reducers/CartItems/reducer';
 
 export interface CartItem extends Coffee {
   quantity: number;
@@ -30,50 +30,6 @@ interface CartContextProviderProps {
 }
 
 const COFFEE_ITEMS_STORAGE_KEY = 'florencioMath-coffeeDelivery:CartItems';
-
-const cartReducer = (state: CartItem[], action: any) => {
-  switch (action.type) {
-    case 'ADD_COFFEE':
-      const coffeeAlreadyExistsInCart = state.findIndex(
-        (cartItem) => cartItem.id === action.payload.id
-      );
-      if (coffeeAlreadyExistsInCart < 0) {
-        return produce(state, (draft) => {
-          draft.push(action.payload);
-        });
-      } else {
-        return produce(state, (draft) => {
-          draft[coffeeAlreadyExistsInCart].quantity += action.payload.quantity;
-        });
-      }
-    case 'CHANGE_QUANTITY':
-      const coffeeExistsInCart = state.findIndex(
-        (cartItem) => cartItem.id === action.payload.cartItemId
-      );
-      if (coffeeExistsInCart >= 0) {
-        const item = state[coffeeExistsInCart];
-        return produce(state, (draft) => {
-          draft[coffeeExistsInCart].quantity =
-            action.payload.type === 'increase'
-              ? item.quantity + 1
-              : item.quantity - 1;
-        });
-      }
-    case 'REMOVE_ITEM':
-      const coffeeToRemoveIndex = state.findIndex(
-        (cartItem) => cartItem.id === action.payload.cartItemId
-      );
-      if (coffeeToRemoveIndex >= 0) {
-        return produce(state, (draft) => {
-          draft.splice(coffeeToRemoveIndex, 1);
-        });
-      }
-    case 'CLEAN_CART':
-      return [];
-    default:
-      return state;
-  }
-};
 
 export const CartContext = createContext({} as CartContextType);
 
