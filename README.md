@@ -45,7 +45,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 ## 💻 Projeto
 
 O Coffee Delivery é um aplicativo de venda online de café, temo uma página Home onde os cafés são listados e na barra de navegação tem um botão de carrinho responsável por levar o usuário para a página de checkin, onde há um formulário para preencher os dados de entrega e a forma de pagamante, os dados sendo todos preenchidos da forma correta o usuário é encaminhado para a tela de sucesso. <br/>
-Esse é o terceiro projeto desenvolvido durante a Trilha Ignite de ReactJS.
+Esse é o segundo desafio desenvolvido durante a Trilha Ignite de ReactJS.
 
 
 - [Acesse o deploy do projeto, na Vercel](https://florenciomath-coffeedelivery.vercel.app/)
